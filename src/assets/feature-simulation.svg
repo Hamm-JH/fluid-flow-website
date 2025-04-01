@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <!-- 배경 -->
+  <rect width="800" height="450" fill="#f0f8ff" />
+  
+  <!-- 그래프 배경 그리드 -->
+  <g transform="translate(50, 50)">
+    <rect width="700" height="350" fill="white" stroke="#e0e0e0" stroke-width="1" />
+    
+    <!-- 그리드 라인 -->
+    <g stroke="#e0e0e0" stroke-width="1">
+      <line x1="0" y1="70" x2="700" y2="70" />
+      <line x1="0" y1="140" x2="700" y2="140" />
+      <line x1="0" y1="210" x2="700" y2="210" />
+      <line x1="0" y1="280" x2="700" y2="280" />
+      
+      <line x1="140" y1="0" x2="140" y2="350" />
+      <line x1="280" y1="0" x2="280" y2="350" />
+      <line x1="420" y1="0" x2="420" y2="350" />
+      <line x1="560" y1="0" x2="560" y2="350" />
+    </g>
+    
+    <!-- 유체 흐름 시뮬레이션 시각화 -->
+    <!-- 유속 벡터 필드 -->
+    <g stroke="#0288d1" stroke-width="1.5">
+      <path d="M70,70 l15,-10" />
+      <path d="M70,140 l20,-5" />
+      <path d="M70,210 l25,0" />
+      <path d="M70,280 l20,5" />
+      
+      <path d="M210,70 l25,-5" />
+      <path d="M210,140 l30,0" />
+      <path d="M210,210 l25,5" />
+      <path d="M210,280 l20,10" />
+      
+      <path d="M350,70 l30,0" />
+      <path d="M350,140 l25,5" />
+      <path d="M350,210 l20,10" />
+      <path d="M350,280 l15,15" />
+      
+      <path d="M490,70 l25,5" />
+      <path d="M490,140 l20,10" />
+      <path d="M490,210 l15,15" />
+      <path d="M490,280 l10,20" />
+      
+      <path d="M630,70 l15,15" />
+      <path d="M630,140 l10,20" />
+      <path d="M630,210 l5,25" />
+      <path d="M630,280 l0,30" />
+    </g>
+    
+    <!-- 유체 흐름 선 -->
+    <path d="M0,200 C150,180 300,220 450,150 S650,100 700,50" fill="none" stroke="#29b6f6" stroke-width="3" />
+    <path d="M0,220 C150,240 300,180 450,250 S650,280 700,320" fill="none" stroke="#0288d1" stroke-width="3" />
+    
+    <!-- 압력 등고선 (원형 그라데이션) -->
+    <g opacity="0.2">
+      <ellipse cx="200" cy="150" rx="100" ry="70" fill="url(#pressureGradient1)" />
+      <ellipse cx="450" cy="200" rx="120" ry="90" fill="url(#pressureGradient2)" />
+    </g>
+    
+    <!-- 그래디언트 정의 -->
+    <defs>
+      <radialGradient id="pressureGradient1" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+        <stop offset="0%" stop-color="#01579b" />
+        <stop offset="100%" stop-color="transparent" />
+      </radialGradient>
+      <radialGradient id="pressureGradient2" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+        <stop offset="0%" stop-color="#0288d1" />
+        <stop offset="100%" stop-color="transparent" />
+      </radialGradient>
+    </defs>
+  </g>
+  
+  <!-- UI 요소 -->
+  <g transform="translate(20, 20)">
+    <rect x="0" y="0" width="760" height="30" rx="4" fill="#01579b" />
+    <text x="20" y="20" font-family="Arial" font-size="14" fill="white">유체 흐름 시뮬레이션 - 압력 및 유속 분석</text>
+  </g>
+  
+  <!-- 컨트롤 패널 -->
+  <g transform="translate(650, 70)">
+    <rect x="0" y="0" width="120" height="150" rx="4" fill="white" stroke="#e0e0e0" stroke-width="1" />
+    <text x="10" y="20" font-family="Arial" font-size="12" fill="#01579b">시뮬레이션 컨트롤</text>
+    
+    <g transform="translate(10, 40)">
+      <rect x="0" y="0" width="100" height="20" rx="3" fill="#e1f5fe" />
+      <text x="10" y="14" font-family="Arial" font-size="10" fill="#01579b">유속: 2.5 m/s</text>
+    </g>
+    
+    <g transform="translate(10, 70)">
+      <rect x="0" y="0" width="100" height="20" rx="3" fill="#e1f5fe" />
+      <text x="10" y="14" font-family="Arial" font-size="10" fill="#01579b">압력: 101.3 kPa</text>
+    </g>
+    
+    <g transform="translate(10, 100)">
+      <rect x="0" y="0" width="100" height="20" rx="3" fill="#e1f5fe" />
+      <text x="10" y="14" font-family="Arial" font-size="10" fill="#01579b">온도: 25°C</text>
+    </g>
+  </g>
+  
+  <!-- 결과 로그 -->
+  <g transform="translate(50, 410)">
+    <text x="0" y="0" font-family="Arial" font-size="10" fill="#555">시뮬레이션 완료: 3000회 반복, 수렴 오차 &lt; 0.001, 실행 시간: 2.3초</text>
+  </g>
+</svg>

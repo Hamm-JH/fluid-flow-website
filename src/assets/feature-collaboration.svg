@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <!-- 배경 -->
+  <rect width="800" height="450" fill="#fafafa" />
+  
+  <!-- 메인 컨테이너 -->
+  <rect x="50" y="50" width="700" height="350" rx="10" fill="white" stroke="#e0e0e0" stroke-width="2" />
+  
+  <!-- 상단 헤더 -->
+  <rect x="50" y="50" width="700" height="60" rx="10 10 0 0" fill="#01579b" />
+  <text x="90" y="85" font-family="Arial" font-size="20" fill="white" font-weight="bold">Fluid Flow Analysis - 협업 프로젝트</text>
+  
+  <!-- 사용자 아이콘 영역 -->
+  <g transform="translate(550, 65)">
+    <circle cx="0" cy="0" r="15" fill="#29b6f6" stroke="white" stroke-width="2" />
+    <text x="0" y="5" font-family="Arial" font-size="12" fill="white" text-anchor="middle">KH</text>
+    
+    <circle cx="35" cy="0" r="15" fill="#ff9800" stroke="white" stroke-width="2" />
+    <text x="35" y="5" font-family="Arial" font-size="12" fill="white" text-anchor="middle">JY</text>
+    
+    <circle cx="70" cy="0" r="15" fill="#4caf50" stroke="white" stroke-width="2" />
+    <text x="70" y="5" font-family="Arial" font-size="12" fill="white" text-anchor="middle">MS</text>
+    
+    <circle cx="105" cy="0" r="15" fill="#f44336" stroke="white" stroke-width="2" />
+    <text x="105" y="5" font-family="Arial" font-size="12" fill="white" text-anchor="middle">+2</text>
+  </g>
+  
+  <!-- 콘텐츠 영역 -->
+  <g transform="translate(90, 140)">
+    <!-- 모델 미리보기 영역 -->
+    <rect x="0" y="0" width="250" height="200" rx="6" fill="#e1f5fe" stroke="#b3e5fc" stroke-width="1" />
+    <text x="20" y="30" font-family="Arial" font-size="14" fill="#01579b" font-weight="bold">댐 유출 시뮬레이션 모델</text>
+    
+    <!-- 간단한 모델 시각화 -->
+    <rect x="20" y="50" width="210" height="120" rx="4" fill="white" stroke="#b3e5fc" stroke-width="1" />
+    <path d="M20,130 C70,100 120,160 170,90 S220,70 230,90" fill="none" stroke="#0288d1" stroke-width="2" />
+    <path d="M20,150 C80,135 130,145 190,120 S220,115 230,110" fill="none" stroke="#29b6f6" stroke-width="2" />
+    
+    <!-- 상태 아이콘 -->
+    <g transform="translate(20, 180)">
+      <circle cx="0" cy="0" r="5" fill="#4caf50" />
+      <text x="15" y="4" font-family="Arial" font-size="12" fill="#333">작업 중</text>
+    </g>
+    
+    <!-- 공유 아이콘 -->
+    <g transform="translate(200, 180)">
+      <circle cx="0" cy="0" r="10" fill="#0288d1" />
+      <path d="M-5,-3 L5,-3 L5,3 L-5,3 Z" fill="white" />
+      <path d="M-2,-5 L2,-5 L2,7 L-2,7 Z" fill="white" />
+    </g>
+  </g>
+  
+  <!-- 협업 도구 영역 -->
+  <g transform="translate(400, 140)">
+    <!-- 댓글 섹션 -->
+    <rect x="0" y="0" width="300" height="70" rx="6" fill="white" stroke="#e0e0e0" stroke-width="1" />
+    <g transform="translate(15, 15)">
+      <circle cx="0" cy="0" r="12" fill="#ff9800" />
+      <text x="0" y="4" font-family="Arial" font-size="10" fill="white" text-anchor="middle">JY</text>
+      
+      <rect x="30" y="-10" width="240" height="40" rx="5" fill="#f5f5f5" />
+      <text x="45" y="5" font-family="Arial" font-size="12" fill="#333">댐 안전 계수를 1.5에서 2.0으로 변경했습니다.</text>
+      <text x="45" y="20" font-family="Arial" font-size="10" fill="#666">오늘 오전 10:25</text>
+    </g>
+    
+    <!-- 메시지 섹션 -->
+    <rect x="0" y="80" width="300" height="70" rx="6" fill="white" stroke="#e0e0e0" stroke-width="1" />
+    <g transform="translate(15, 95)">
+      <circle cx="0" cy="0" r="12" fill="#4caf50" />
+      <text x="0" y="4" font-family="Arial" font-size="10" fill="white" text-anchor="middle">MS</text>
+      
+      <rect x="30" y="-10" width="240" height="40" rx="5" fill="#f5f5f5" />
+      <text x="45" y="5" font-family="Arial" font-size="12" fill="#333">시뮬레이션 결과를 새로 업데이트했습니다.</text>
+      <text x="45" y="20" font-family="Arial" font-size="10" fill="#666">오늘 오전 11:42</text>
+    </g>
+    
+    <!-- 작업 히스토리 섹션 -->
+    <rect x="0" y="160" width="300" height="90" rx="6" fill="white" stroke="#e0e0e0" stroke-width="1" />
+    <text x="15" y="175" font-family="Arial" font-size="14" fill="#01579b">작업 히스토리</text>
+    
+    <g transform="translate(15, 190)" font-family="Arial" font-size="12">
+      <text x="0" y="0" fill="#333">• MS: 시뮬레이션 실행 (11:40)</text>
+      <text x="0" y="20" fill="#333">• JY: 매개변수 업데이트 (10:20)</text>
+      <text x="0" y="40" fill="#333">• KH: 모델 생성 (어제)</text>
+    </g>
+    
+    <!-- 컨트롤 영역 -->
+    <rect x="0" y="260" width="300" height="40" rx="6" fill="#e1f5fe" />
+    <g transform="translate(60, 280)" font-family="Arial" font-size="12" text-anchor="middle">
+      <text x="0" y="0" fill="#0288d1">파일 공유</text>
+      <text x="90" y="0" fill="#0288d1">화상 회의</text>
+      <text x="180" y="0" fill="#0288d1">일정 관리</text>
+    </g>
+  </g>
+  
+  <!-- 상태 바 -->
+  <rect x="50" y="360" width="700" height="40" rx="0 0 10 10" fill="#f5f5f5" />
+  
+  <!-- 상태 정보 -->
+  <g transform="translate(70, 380)" font-family="Arial" font-size="12" fill="#666">
+    <text x="0" y="0">마지막 동기화: 2분 전</text>
+    <text x="200" y="0">현재 접속자: 4명</text>
+    <text x="400" y="0">저장된 버전: 5</text>
+    <text x="600" y="0">프로젝트 ID: FF-2023-01</text>
+  </g>
+</svg>

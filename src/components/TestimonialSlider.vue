@@ -3,12 +3,21 @@
       <div class="testimonial-container" :style="{ transform: `translateX(-${currentSlide * 100}%)` }">
         <div class="testimonial" v-for="(testimonial, index) in testimonials" :key="index">
           <div class="testimonial-content">
-            <div class="quote">"{{ testimonial.quote }}"</div>
+            <div class="quote">
+              <font-awesome-icon icon="quote-right" class="quote-icon" />
+              "{{ testimonial.quote }}"
+            </div>
             <div class="author-info">
               <img :src="testimonial.avatar" alt="Avatar" class="avatar" />
               <div class="author-details">
-                <div class="name">{{ testimonial.name }}</div>
-                <div class="company">{{ testimonial.company }}</div>
+                <div class="name">
+                  <font-awesome-icon :icon="testimonial.icon" class="person-icon" />
+                  {{ testimonial.name }}
+                </div>
+                <div class="company">
+                  <font-awesome-icon :icon="testimonial.companyIcon" class="company-icon" />
+                  {{ testimonial.company }}
+                </div>
               </div>
             </div>
           </div>
@@ -130,6 +139,17 @@
     color: #333;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .quote-icon {
+    color: #29b6f6;
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    opacity: 0.7;
+    font-size: 1rem;
   }
   
   .author-info {
@@ -154,11 +174,28 @@
   .name {
     font-weight: bold;
     color: #01579b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .person-icon {
+    color: #0288d1;
+    font-size: 0.9rem;
   }
   
   .company {
     font-size: 0.9rem;
     color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+  }
+  
+  .company-icon {
+    color: #0288d1;
+    font-size: 0.8rem;
   }
   
   .slider-controls {

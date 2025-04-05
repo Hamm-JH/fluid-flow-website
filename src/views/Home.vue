@@ -62,7 +62,7 @@
         <div class="container">
           <h2>지금 바로 시작하세요</h2>
           <p>Fluid Flow Analysis System에 대해 더 알아보고 싶으신가요?</p>
-          <button class="btn primary large">문의하기</button>
+          <router-link to="/contact" class="btn primary large">문의하기</router-link>
         </div>
       </section>
     </div>

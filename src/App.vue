@@ -11,7 +11,7 @@
             <li><router-link to="/" exact-active-class="active">홈</router-link></li>
             <li><router-link to="/features" active-class="active">기능</router-link></li>
             <li><router-link to="/case-studies" active-class="active">사례 연구</router-link></li>
-            <li><a href="#">문의하기</a></li>
+            <li><router-link to="/contact" active-class="active">문의하기</router-link></li>
           </ul>
         </nav>
         <button class="menu-toggle" @click="toggleMenu">
@@ -49,7 +49,7 @@
                 <li><a href="#">문서</a></li>
                 <li><a href="#">튜토리얼</a></li>
                 <li><a href="#">FAQ</a></li>
-                <li><a href="#">문의</a></li>
+                <li><router-link to="/contact">문의</router-link></li>
               </ul>
             </div>
             <div class="link-group">
@@ -58,7 +58,7 @@
                 <li><a href="#">회사 소개</a></li>
                 <li><a href="#">블로그</a></li>
                 <li><a href="#">채용</a></li>
-                <li><a href="#">연락처</a></li>
+                <li><router-link to="/contact">연락처</router-link></li>
               </ul>
             </div>
           </div>

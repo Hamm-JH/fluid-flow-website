@@ -134,8 +134,8 @@
           <h2>귀사의 프로젝트에 Fluid Flow Analysis System이 필요하신가요?</h2>
           <p>프로젝트에 맞는 최적의 솔루션을 제안해 드립니다.</p>
           <div class="cta-buttons">
-            <button class="btn primary">데모 신청</button>
-            <button class="btn secondary">문의하기</button>
+            <router-link to="/contact?inquiryType=demo" class="btn primary">데모 신청</router-link>
+            <router-link to="/contact" class="btn secondary">문의하기</router-link>
           </div>
         </div>
       </section>

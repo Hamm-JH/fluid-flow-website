@@ -7,8 +7,7 @@ import './assets/main.css'
 import Home from './views/Home.vue'
 import Features from './views/Features.vue'
 import CaseStudies from './views/CaseStudies.vue'
-// 필요한 경우 추가 페이지들 임포트
-// import Contact from './views/Contact.vue'
+import Contact from './views/Contact.vue'
 
 // 라우터 설정
 const routes = [
@@ -27,12 +26,11 @@ const routes = [
     name: 'CaseStudies',
     component: CaseStudies
   },
-  // 필요한 경우 추가 라우트 설정
-  // {
-  //   path: '/contact',
-  //   name: 'Contact', 
-  //   component: Contact
-  // }
+  {
+    path: '/contact',
+    name: 'Contact', 
+    component: Contact
+  }
 ]
 
 const router = createRouter({

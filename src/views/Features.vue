@@ -137,7 +137,7 @@
           <h2>지금 바로 Fluid Flow Analysis System을 시작하세요</h2>
           <p>프로젝트의 효율성과 정확성을 높이는 최고의 선택</p>
           <div class="cta-buttons">
-            <button class="btn primary">데모 신청</button>
+            <router-link to="/contact?inquiryType=demo" class="btn primary">데모 신청</router-link>
             <button class="btn secondary">더 알아보기</button>
           </div>
         </div>

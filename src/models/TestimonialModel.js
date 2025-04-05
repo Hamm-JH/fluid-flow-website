@@ -27,7 +27,7 @@ export default {
         name: '박준영',
         company: '도시계획연구소',
         quote: '도시 배수 시스템 설계에 Fluid Flow를 도입한 후 우리 팀의 생산성이 30% 이상 향상되었습니다. 특히 다양한 출력 형식 덕분에 협업이 훨씬 쉬워졌습니다.',
-        avatar: '@/assets/avatar-3.jpg'
+        avatar: '@/assets/avatar-1.jpg'
       }
     ];
   }

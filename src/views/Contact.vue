@@ -119,7 +119,7 @@
             
             <div class="info-item">
               <div class="icon">
-                <i class="fas fa-phone-alt"></i>
+                <font-awesome-icon icon="phone-alt" />
               </div>
               <div class="details">
                 <h3>전화</h3>
@@ -130,7 +130,7 @@
             
             <div class="info-item">
               <div class="icon">
-                <i class="fas fa-envelope"></i>
+                <font-awesome-icon icon="envelope" />
               </div>
               <div class="details">
                 <h3>이메일</h3>
@@ -141,7 +141,7 @@
             
             <div class="info-item">
               <div class="icon">
-                <i class="fas fa-map-marker-alt"></i>
+                <font-awesome-icon icon="map-marker-alt" />
               </div>
               <div class="details">
                 <h3>주소</h3>
@@ -151,16 +151,16 @@
             
             <div class="social-links">
               <a href="https://www.linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
+                <font-awesome-icon :icon="['fab', 'linkedin-in']" />
               </a>
               <a href="https://www.x.com" target="_blank" class="social-link" aria-label="X">
-                <i class="fab fa-x"></i>
+                <font-awesome-icon :icon="['fab', 'x-twitter']" />
               </a>
               <a href="https://www.facebook.com" target="_blank" class="social-link" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
+                <font-awesome-icon :icon="['fab', 'facebook-f']" />
               </a>
               <a href="https://www.youtube.com" target="_blank" class="social-link" aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
+                <font-awesome-icon :icon="['fab', 'youtube']" />
               </a>
             </div>
           </div>
@@ -172,7 +172,7 @@
     <section class="map-section">
       <div class="map-container">
         <div class="map-placeholder">
-          <i class="fas fa-map-marked-alt"></i>
+          <font-awesome-icon icon="map-marked-alt" />
           <span>지도가 여기에 표시됩니다</span>
         </div>
       </div>
@@ -184,7 +184,7 @@
     <div class="privacy-modal" v-if="showPrivacyPolicy" @click.self="showPrivacyPolicy = false">
       <div class="privacy-modal-content">
         <button class="close-modal" @click="showPrivacyPolicy = false">
-          <i class="fas fa-times"></i>
+          <font-awesome-icon icon="times" />
         </button>
         <h2>개인정보처리방침</h2>
         <div class="privacy-content">

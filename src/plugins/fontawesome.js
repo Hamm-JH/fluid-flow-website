@@ -9,13 +9,20 @@ import {
   faChevronUp,
   faChevronLeft,
   faChevronRight,
-  faExternalLinkAlt
+  faExternalLinkAlt,
+  faPhoneAlt,
+  faEnvelope,
+  faMapMarkerAlt,
+  faMapMarkedAlt,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faLinkedin,
   faFacebook,
   faYoutube,
-  faXTwitter
+  faXTwitter,
+  faLinkedinIn,
+  faFacebookF
 } from '@fortawesome/free-brands-svg-icons'
 
 // 사용할 아이콘 등록
@@ -30,11 +37,18 @@ library.add(
   faChevronLeft,
   faChevronRight,
   faExternalLinkAlt,
+  faPhoneAlt,
+  faEnvelope,
+  faMapMarkerAlt,
+  faMapMarkedAlt,
+  faTimes,
   // Brand 아이콘
   faLinkedin,
   faXTwitter,
   faFacebook,
-  faYoutube
+  faYoutube,
+  faLinkedinIn,
+  faFacebookF
 )
 
 export { FontAwesomeIcon }

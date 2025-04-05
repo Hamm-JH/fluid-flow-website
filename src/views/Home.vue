@@ -72,8 +72,8 @@
   </div>
 </template>
   
-  <script>
-  import FeatureCard from '@/components/FeatureCard.vue';
+<script>
+import FeatureCard from '@/components/FeatureCard.vue';
 import TestimonialSlider from '@/components/TestimonialSlider.vue';
 
 // 모델 가져오기
@@ -81,228 +81,228 @@ import FeatureModel from '@/models/FeatureModel';
 import UseCaseModel from '@/models/UseCaseModel';
 import TestimonialModel from '@/models/TestimonialModel';
   
-  export default {
-    name: 'HomePage',
-    components: {
-      FeatureCard,
-      TestimonialSlider
-    },
-    data() {
-      return {
-        features: FeatureModel.getFeatures(),
-        useCases: UseCaseModel.getUseCases(),
-        testimonials: TestimonialModel.getTestimonials()
-      }
-    },
-    mounted() {
-      // Hero 섹션 애니메이션
-      this.$animate.fadeIn('.hero-content', {
-        delay: 0.2,
-        stagger: 0.2
-      });
-      
-      this.$animate.fadeIn('.hero-image', {
-        delay: 0.5,
-        x: 30
-      });
-      
-      // 스크롤 애니메이션
-      this.$animate.revealOnScroll('.features-grid .feature-card', {
-        stagger: 0.15
-      });
-      
-      this.$animate.revealOnScroll('.use-case-slide', {
-        stagger: 0.2,
-        scale: 0.95
-      });
-      
-      this.$animate.revealOnScroll('.testimonial-slider', {
-        delay: 0.2
-      });
+export default {
+  name: 'HomePage',
+  components: {
+    FeatureCard,
+    TestimonialSlider
+  },
+  data() {
+    return {
+      features: FeatureModel.getFeatures(),
+      useCases: UseCaseModel.getUseCases(),
+      testimonials: TestimonialModel.getTestimonials()
     }
+  },
+  mounted() {
+    // Hero 섹션 애니메이션
+    this.$animate.fadeIn('.hero-content', {
+      delay: 0.2,
+      stagger: 0.2
+    });
+    
+    this.$animate.fadeIn('.hero-image', {
+      delay: 0.5,
+      x: 30
+    });
+    
+    // 스크롤 애니메이션
+    this.$animate.revealOnScroll('.features-grid .feature-card', {
+      stagger: 0.15
+    });
+    
+    this.$animate.revealOnScroll('.use-case-slide', {
+      stagger: 0.2,
+      scale: 0.95
+    });
+    
+    this.$animate.revealOnScroll('.testimonial-slider', {
+      delay: 0.2
+    });
   }
-  </script>
+}
+</script>
   
-  <style scoped>
-  .home-content {
-    width: 100%;
+<style scoped>
+.home-content {
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #0288d1 0%, #01579b 100%);
+  color: white;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 50%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background-color: white;
+  color: #0288d1;
+  border: none;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn.large {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.hero-image {
+  max-width: 50%;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.wave-animation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('@/assets/wave.svg') repeat-x;
+  background-size: 1000px 100px;
+  animation: wave 20s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0;
   }
-  
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+section {
+  padding: 5rem 0;
+}
+
+.features, .use-cases, .testimonials, .contact {
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #01579b;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.use-cases-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.use-case-slide {
+  flex: 0 0 auto;
+  width: 300px;
+  scroll-snap-align: start;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.use-case-slide img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.use-case-slide h3 {
+  margin: 1rem;
+  color: #01579b;
+}
+
+.use-case-slide p {
+  margin: 0 1rem 1rem;
+  color: #555;
+}
+
+.contact {
+  background-color: #e1f5fe;
+  padding: 4rem 0;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
   .hero {
-    position: relative;
-    background: linear-gradient(135deg, #0288d1 0%, #01579b 100%);
-    color: white;
-    padding: 6rem 0;
-    overflow: hidden;
-  }
-  
-  .hero-content {
-    max-width: 50%;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-  }
-  
-  .cta-buttons {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .btn.primary {
-    background-color: white;
-    color: #0288d1;
-    border: none;
-  }
-  
-  .btn.secondary {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-  }
-  
-  .btn.large {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-  }
-  
-  .hero-image {
-    max-width: 50%;
-  }
-  
-  .hero-image img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  }
-  
-  .wave-animation {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url('@/assets/wave.svg') repeat-x;
-    background-size: 1000px 100px;
-    animation: wave 20s linear infinite;
-  }
-  
-  @keyframes wave {
-    0% {
-      background-position-x: 0;
-    }
-    100% {
-      background-position-x: 1000px;
-    }
-  }
-  
-  section {
-    padding: 5rem 0;
-  }
-  
-  .features, .use-cases, .testimonials, .contact {
-    text-align: center;
-  }
-  
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #01579b;
-  }
-  
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .use-cases-slider {
-    display: flex;
-    overflow-x: auto;
-    gap: 2rem;
-    padding: 1rem 0;
-    scroll-snap-type: x mandatory;
-  }
-  
-  .use-case-slide {
-    flex: 0 0 auto;
-    width: 300px;
-    scroll-snap-align: start;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .use-case-slide img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .use-case-slide h3 {
-    margin: 1rem;
-    color: #01579b;
-  }
-  
-  .use-case-slide p {
-    margin: 0 1rem 1rem;
-    color: #555;
-  }
-  
-  .contact {
-    background-color: #e1f5fe;
     padding: 4rem 0;
   }
   
-  .contact p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+  .hero-content, .hero-image {
+    max-width: 100%;
   }
   
-  @media (max-width: 768px) {
-    .hero {
-      padding: 4rem 0;
-    }
-    
-    .hero-content, .hero-image {
-      max-width: 100%;
-    }
-    
-    .hero h1 {
-      font-size: 2.2rem;
-    }
-    
-    .subtitle {
-      font-size: 1.2rem;
-    }
-    
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
+  .hero h1 {
+    font-size: 2.2rem;
   }
-  </style>
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

@@ -8,6 +8,7 @@ import Home from './views/Home.vue'
 import Features from './views/Features.vue'
 import CaseStudies from './views/CaseStudies.vue'
 import Contact from './views/Contact.vue'
+import FAQ from './views/FAQ.vue'
 
 // 라우터 설정
 const routes = [
@@ -15,6 +16,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/faq',
+    name: 'FAQ',
+    component: FAQ
   },
   {
     path: '/features',

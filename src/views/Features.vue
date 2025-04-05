@@ -138,7 +138,7 @@
           <p>프로젝트의 효율성과 정확성을 높이는 최고의 선택</p>
           <div class="cta-buttons">
             <router-link to="/contact?inquiryType=demo" class="btn primary">데모 신청</router-link>
-            <button class="btn secondary">더 알아보기</button>
+            <router-link to="/features" class="btn secondary">더 알아보기</router-link>
           </div>
         </div>
       </section>

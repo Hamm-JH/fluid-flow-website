@@ -150,16 +150,16 @@
             </div>
             
             <div class="social-links">
-              <a href="#" class="social-link" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="#" class="social-link" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
+              <a href="https://www.x.com" target="_blank" class="social-link" aria-label="X">
+                <i class="fab fa-x"></i>
               </a>
-              <a href="#" class="social-link" aria-label="Facebook">
+              <a href="https://www.facebook.com" target="_blank" class="social-link" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="#" class="social-link" aria-label="YouTube">
+              <a href="https://www.youtube.com" target="_blank" class="social-link" aria-label="YouTube">
                 <i class="fab fa-youtube"></i>
               </a>
             </div>
@@ -178,27 +178,7 @@
       </div>
     </section>
 
-    <!-- FAQ 섹션 -->
-    <section class="faq-section">
-      <div class="container">
-        <h2>자주 묻는 질문</h2>
-        <div class="faq-container">
-          <div class="faq-item" v-for="(faq, index) in faqs" :key="index">
-            <div 
-              class="faq-question" 
-              :class="{ 'active': faq.isOpen }"
-              @click="toggleFaq(index)"
-            >
-              {{ faq.question }}
-              <i class="fas" :class="faq.isOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-            </div>
-            <div class="faq-answer" :class="{ 'open': faq.isOpen }">
-              <p>{{ faq.answer }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- 개인정보처리방침 모달 -->
     <div class="privacy-modal" v-if="showPrivacyPolicy" @click.self="showPrivacyPolicy = false">
@@ -260,31 +240,6 @@ export default {
       submitted: false,
       showPrivacyPolicy: false,
       faqs: [
-        {
-          question: '데모 신청은 어떻게 하나요?',
-          answer: '데모 신청은 이 페이지의 문의 양식을 통해 할 수 있습니다. "문의 유형"에서 "데모 신청"을 선택하고 필요한 정보를 입력해주세요. 담당자가 확인 후 24시간 이내에 연락드립니다.',
-          isOpen: false
-        },
-        {
-          question: '제품 가격은 어떻게 되나요?',
-          answer: 'Fluid Flow Analysis System은 기본 패키지와 추가 모듈 형태로 제공됩니다. 정확한 가격은 귀사의 요구사항과 사용 규모에 따라 달라질 수 있습니다. 자세한 가격 정보는 영업팀에 문의해 주시기 바랍니다.',
-          isOpen: false
-        },
-        {
-          question: '기술 지원은 어떻게 받을 수 있나요?',
-          answer: '기술 지원은 이메일(support@fluidflowsystem.com)이나 전화(02-1234-5678)로 문의하실 수 있습니다. 또한 정기적인 소프트웨어 업데이트와 온라인 지식 베이스도 제공합니다.',
-          isOpen: false
-        },
-        {
-          question: '교육 및 트레이닝 프로그램이 있나요?',
-          answer: '네, 정기적인 온라인 및 오프라인 교육 프로그램을 제공합니다. 기본 사용법부터 고급 기능 활용까지 다양한 수준의 트레이닝을 제공하며, 사용자 그룹별 맞춤 교육도 가능합니다.',
-          isOpen: false
-        },
-        {
-          question: '다른 시스템과의 통합이 가능한가요?',
-          answer: 'Fluid Flow Analysis System은 표준 CAD 시스템, GIS 도구, 데이터베이스 등 다양한 외부 시스템과의 통합을 지원합니다. API를 통한 커스텀 통합도 가능하니 자세한 내용은 기술 지원팀에 문의해 주세요.',
-          isOpen: false
-        }
       ]
     }
   },
@@ -360,16 +315,6 @@ export default {
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return re.test(email);
     },
-    
-    toggleFaq(index) {
-      this.faqs.forEach((faq, i) => {
-        if (i === index) {
-          faq.isOpen = !faq.isOpen;
-        } else {
-          faq.isOpen = false;
-        }
-      });
-    }
   }
 }
 </script>
@@ -643,64 +588,7 @@ input[type="checkbox"] {
   margin-bottom: 1rem;
 }
 
-.faq-section {
-  padding: 5rem 0;
-}
 
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.faq-item {
-  margin-bottom: 1rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.faq-question {
-  padding: 1.2rem;
-  background-color: white;
-  font-weight: 500;
-  color: #333;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s;
-}
-
-.faq-question:hover {
-  background-color: #f9f9f9;
-}
-
-.faq-question.active {
-  color: #0288d1;
-  background-color: #e1f5fe;
-}
-
-.faq-question i {
-  transition: transform 0.3s;
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  background-color: white;
-}
-
-.faq-answer.open {
-  max-height: 500px;
-}
-
-.faq-answer p {
-  padding: 1.2rem;
-  margin: 0;
-  color: #555;
-  border-top: 1px solid #e0e0e0;
-}
 
 .privacy-modal {
   position: fixed;

@@ -7,8 +7,8 @@
             <h1>Fluid Flow Analysis System</h1>
             <p class="subtitle">토목 엔지니어링을 위한 최첨단 유체 흐름 분석 솔루션</p>
             <div class="cta-buttons">
-              <button class="btn primary">데모 신청</button>
-              <button class="btn secondary">자세히 알아보기</button>
+              <router-link to="/contact?inquiryType=demo" class="btn primary">데모 신청</router-link>
+              <router-link to="/features" class="btn secondary">자세히 알아보기</router-link>
             </div>
           </div>
           <div class="hero-image">

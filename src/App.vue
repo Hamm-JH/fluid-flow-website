@@ -11,7 +11,13 @@
             <li><router-link to="/" exact-active-class="active">홈</router-link></li>
             <li><router-link to="/features" active-class="active">기능</router-link></li>
             <li><router-link to="/case-studies" active-class="active">사례 연구</router-link></li>
-            <li><router-link to="/contact" active-class="active">문의하기</router-link></li>
+            <li class="dropdown-container">
+              <a href="#" class="dropdown-toggle" @click.prevent="toggleSupportMenu">지원 <i class="fas" :class="isSupportMenuOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i></a>
+              <ul class="dropdown-menu" :class="{ 'active': isSupportMenuOpen }">
+                <li><router-link to="/faq" active-class="active">FAQ</router-link></li>
+                <li><router-link to="/contact" active-class="active">문의하기</router-link></li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <button class="menu-toggle" @click="toggleMenu">
@@ -37,27 +43,27 @@
             <div class="link-group">
               <h4>제품</h4>
               <ul>
-                <li><a href="#">기능</a></li>
-                <li><a href="#">시스템 요구 사항</a></li>
-                <li><a href="#">가격</a></li>
-                <li><a href="#">다운로드</a></li>
+                <li><router-link to="/features">기능</router-link></li>
+                <li><a href="#" @click.prevent="scrollToSystemRequirements">시스템 요구 사항</a></li>
+                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">가격 <i class="fas fa-external-link-alt"></i></a></li>
+                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">다운로드 <i class="fas fa-external-link-alt"></i></a></li>
               </ul>
             </div>
             <div class="link-group">
               <h4>지원</h4>
               <ul>
-                <li><a href="#">문서</a></li>
-                <li><a href="#">튜토리얼</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">문서 <i class="fas fa-external-link-alt"></i></a></li>
+                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">튜토리얼 <i class="fas fa-external-link-alt"></i></a></li>
+                <li><router-link to="/faq">FAQ</router-link></li>
                 <li><router-link to="/contact">문의</router-link></li>
               </ul>
             </div>
             <div class="link-group">
               <h4>회사</h4>
               <ul>
-                <li><a href="#">회사 소개</a></li>
-                <li><a href="#">블로그</a></li>
-                <li><a href="#">채용</a></li>
+                <li><a href="https://wesmart.pro/" target="_blank" class="external-link">회사 소개 <i class="fas fa-external-link-alt"></i></a></li>
+                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">블로그 <i class="fas fa-external-link-alt"></i></a></li>
+                <li><a href="https://www.saramin.co.kr/zf_user/company-info/view?csn=MVdHRVQ1RVlFMmRLNWVZVG9PZEg5dz09&popup_yn=y" target="_blank" class="external-link">채용 <i class="fas fa-external-link-alt"></i></a></li>
                 <li><router-link to="/contact">연락처</router-link></li>
               </ul>
             </div>
@@ -66,10 +72,10 @@
         <div class="footer-bottom">
           <p>&copy; {{ new Date().getFullYear() }} Fluid Flow Analysis System. All rights reserved.</p>
           <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.x.com" target="_blank" class="social-icon" aria-label="X"><i class="fab fa-x"></i></a>
+            <a href="https://www.facebook.com" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
       </div>
@@ -82,13 +88,32 @@ export default {
   name: 'App',
   data() {
     return {
-      isMenuOpen: false
+      isMenuOpen: false,
+      isSupportMenuOpen: false
     }
   },
   methods: {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
       document.body.classList.toggle('no-scroll', this.isMenuOpen);
+    },
+    toggleSupportMenu() {
+      this.isSupportMenuOpen = !this.isSupportMenuOpen;
+    },
+    openExternalLink(url) {
+      // 외부 링크를 새 탭에서 열기
+      window.open(url, '_blank');
+    },
+    scrollToSystemRequirements() {
+      // 기능 페이지로 이동 후 시스템 요구 사항 섹션으로 스크롤
+      this.$router.push('/features').then(() => {
+        setTimeout(() => {
+          const techSpecsSection = document.querySelector('.technical-specs');
+          if (techSpecsSection) {
+            techSpecsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 500);
+      });
     }
   }
 }
@@ -192,6 +217,65 @@ body.no-scroll {
   border-radius: 2px;
 }
 
+/* 드롭다운 메뉴 스타일 */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle i {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  transition: transform 0.3s;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.7rem 1.5rem;
+  color: var(--text-dark);
+  transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--bg-light);
+}
+
+.dropdown-menu a.active::after {
+  display: none;
+}
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -270,6 +354,12 @@ body.no-scroll {
   color: var(--white);
 }
 
+.external-link i {
+  font-size: 0.8rem;
+  margin-left: 4px;
+  opacity: 0.8;
+}
+
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
@@ -339,6 +429,36 @@ body.no-scroll {
 
   .nav a {
     font-size: 1.2rem;
+  }
+  
+  .dropdown-container {
+    width: 100%;
+  }
+  
+  .dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+    padding-left: 1rem;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .dropdown-menu.active {
+    max-height: 200px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .dropdown-menu a {
+    padding: 0.7rem 0;
   }
 
   .footer-content {

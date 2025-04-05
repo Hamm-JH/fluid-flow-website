@@ -14,3 +14,7 @@ src/
 │   └── Contact.vue  # 문의 페이지
 ├── router/          # Vue Router 설정
 └── store/           # 필요시 Pinia 또는 Vuex 상태 관리
+
+# 파일럿 프로젝트
+- 고객사 문의로 사이트 개선작업 진행
+- 고객사 주요 상품의 프로모션 페이지 시안 작성

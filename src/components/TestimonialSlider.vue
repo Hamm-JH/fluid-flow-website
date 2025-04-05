@@ -17,7 +17,7 @@
       
       <div class="slider-controls">
         <button class="prev-btn" @click="prevSlide" :disabled="currentSlide === 0">
-          <i class="fas fa-chevron-left"></i>
+          <font-awesome-icon icon="chevron-left" />
         </button>
         <div class="dots">
           <span 
@@ -29,7 +29,7 @@
           ></span>
         </div>
         <button class="next-btn" @click="nextSlide" :disabled="currentSlide === testimonials.length - 1">
-          <i class="fas fa-chevron-right"></i>
+          <font-awesome-icon icon="chevron-right" />
         </button>
       </div>
     </div>

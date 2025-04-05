@@ -1,57 +1,23 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
-import './assets/main.css'
+import router from './router'
+import './assets/styles/main.scss'
+import { FontAwesomeIcon } from './plugins/fontawesome'
+import AnimationPlugin from './plugins/animation'
+import UtilsPlugin from './plugins/utils'
 
-// 페이지 컴포넌트들 임포트
-import Home from './views/Home.vue'
-import Features from './views/Features.vue'
-import CaseStudies from './views/CaseStudies.vue'
-import Contact from './views/Contact.vue'
-import FAQ from './views/FAQ.vue'
-
-// 라우터 설정
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/faq',
-    name: 'FAQ',
-    component: FAQ
-  },
-  {
-    path: '/features',
-    name: 'Features',
-    component: Features
-  },
-  {
-    path: '/case-studies',
-    name: 'CaseStudies',
-    component: CaseStudies
-  },
-  {
-    path: '/contact',
-    name: 'Contact', 
-    component: Contact
-  }
-]
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-  scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { top: 0 }
-    }
-  }
-})
+// 라우터는 router/index.js로 이동
 
 // Vue 애플리케이션 생성 및 마운트
 const app = createApp(App)
+
+// 전역 컴포넌트 등록
+app.component('font-awesome-icon', FontAwesomeIcon)
+
+// 플러그인 등록
 app.use(router)
+app.use(AnimationPlugin)
+app.use(UtilsPlugin)
+
+// 앱 마운트
 app.mount('#app')

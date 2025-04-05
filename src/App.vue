@@ -12,7 +12,7 @@
             <li><router-link to="/features" active-class="active">기능</router-link></li>
             <li><router-link to="/case-studies" active-class="active">사례 연구</router-link></li>
             <li class="dropdown-container">
-              <a href="#" class="dropdown-toggle" @click.prevent="toggleSupportMenu">지원 <i class="fas" :class="isSupportMenuOpen ? 'fa-chevron-up' : 'fa-chevron-down'"></i></a>
+              <a href="#" class="dropdown-toggle" @click.prevent="toggleSupportMenu">지원 <font-awesome-icon :icon="isSupportMenuOpen ? 'chevron-up' : 'chevron-down'" /></a>
               <ul class="dropdown-menu" :class="{ 'active': isSupportMenuOpen }">
                 <li><router-link to="/faq" active-class="active">FAQ</router-link></li>
                 <li><router-link to="/contact" active-class="active">문의하기</router-link></li>
@@ -45,15 +45,15 @@
               <ul>
                 <li><router-link to="/features">기능</router-link></li>
                 <li><a href="#" @click.prevent="scrollToSystemRequirements">시스템 요구 사항</a></li>
-                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">가격 <i class="fas fa-external-link-alt"></i></a></li>
-                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">다운로드 <i class="fas fa-external-link-alt"></i></a></li>
+                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">가격 <font-awesome-icon icon="external-link-alt" /></a></li>
+                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">다운로드 <font-awesome-icon icon="external-link-alt" /></a></li>
               </ul>
             </div>
             <div class="link-group">
               <h4>지원</h4>
               <ul>
-                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">문서 <i class="fas fa-external-link-alt"></i></a></li>
-                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">튜토리얼 <i class="fas fa-external-link-alt"></i></a></li>
+                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">문서 <font-awesome-icon icon="external-link-alt" /></a></li>
+                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">튜토리얼 <font-awesome-icon icon="external-link-alt" /></a></li>
                 <li><router-link to="/faq">FAQ</router-link></li>
                 <li><router-link to="/contact">문의</router-link></li>
               </ul>
@@ -61,9 +61,9 @@
             <div class="link-group">
               <h4>회사</h4>
               <ul>
-                <li><a href="https://wesmart.pro/" target="_blank" class="external-link">회사 소개 <i class="fas fa-external-link-alt"></i></a></li>
-                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">블로그 <i class="fas fa-external-link-alt"></i></a></li>
-                <li><a href="https://www.saramin.co.kr/zf_user/company-info/view?csn=MVdHRVQ1RVlFMmRLNWVZVG9PZEg5dz09&popup_yn=y" target="_blank" class="external-link">채용 <i class="fas fa-external-link-alt"></i></a></li>
+                <li><a href="https://wesmart.pro/" target="_blank" class="external-link">회사 소개 <font-awesome-icon icon="external-link-alt" /></a></li>
+                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">블로그 <font-awesome-icon icon="external-link-alt" /></a></li>
+                <li><a href="https://www.saramin.co.kr/zf_user/company-info/view?csn=MVdHRVQ1RVlFMmRLNWVZVG9PZEg5dz09&popup_yn=y" target="_blank" class="external-link">채용 <font-awesome-icon icon="external-link-alt" /></a></li>
                 <li><router-link to="/contact">연락처</router-link></li>
               </ul>
             </div>
@@ -72,10 +72,10 @@
         <div class="footer-bottom">
           <p>&copy; {{ new Date().getFullYear() }} Fluid Flow Analysis System. All rights reserved.</p>
           <div class="social-icons">
-            <a href="https://www.linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.x.com" target="_blank" class="social-icon" aria-label="X"><i class="fab fa-x"></i></a>
-            <a href="https://www.facebook.com" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon" aria-label="LinkedIn"><font-awesome-icon :icon="['fab', 'linkedin']" /></a>
+            <a href="https://www.x.com" target="_blank" class="social-icon" aria-label="X"><font-awesome-icon :icon="['fab', 'x-twitter']" /></a>
+            <a href="https://www.facebook.com" target="_blank" class="social-icon" aria-label="Facebook"><font-awesome-icon :icon="['fab', 'facebook']" /></a>
+            <a href="https://www.youtube.com" target="_blank" class="social-icon" aria-label="YouTube"><font-awesome-icon :icon="['fab', 'youtube']" /></a>
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 <template>
-    <div class="home">
+  <div class="home">
+    <transition :appear="true" v-bind="$animate.pageTransition()">
+      <div class="home-content">
       <!-- 히어로 섹션 -->
       <section class="hero">
         <div class="container">
@@ -65,12 +67,19 @@
           <router-link to="/contact" class="btn primary large">문의하기</router-link>
         </div>
       </section>
-    </div>
-  </template>
+      </div>
+    </transition>
+  </div>
+</template>
   
   <script>
   import FeatureCard from '@/components/FeatureCard.vue';
-  import TestimonialSlider from '@/components/TestimonialSlider.vue';
+import TestimonialSlider from '@/components/TestimonialSlider.vue';
+
+// 모델 가져오기
+import FeatureModel from '@/models/FeatureModel';
+import UseCaseModel from '@/models/UseCaseModel';
+import TestimonialModel from '@/models/TestimonialModel';
   
   export default {
     name: 'HomePage',
@@ -80,69 +89,45 @@
     },
     data() {
       return {
-        features: [
-          {
-            id: 1,
-            title: '정확한 유체 흐름 분석',
-            description: '첨단 알고리즘을 활용한 정밀한 유체 흐름 분석으로 프로젝트의 정확도를 높입니다.',
-            icon: 'chart-line'
-          },
-          {
-            id: 2,
-            title: '직관적인 CAD 인터페이스',
-            description: '엔지니어를 위해 설계된 사용하기 쉬운 인터페이스로 복잡한 모델링을 간소화합니다.',
-            icon: 'desktop'
-          },
-          {
-            id: 3,
-            title: '실시간 시뮬레이션',
-            description: '변수 조정에 따른 결과를 실시간으로 확인하여 의사 결정 시간을 단축합니다.',
-            icon: 'clock'
-          },
-          {
-            id: 4,
-            title: '다양한 출력 형식',
-            description: '다양한 형식의 보고서와 데이터 내보내기 옵션으로 팀과의 협업을 원활하게 합니다.',
-            icon: 'file-export'
-          }
-        ],
-        useCases: [
-          {
-            title: '도시 배수 시스템',
-            description: '도시 배수 인프라의 효율성을 분석하고 최적화합니다.',
-            image: '@/assets/use-case-1.jpg'
-          },
-          {
-            title: '댐 및 수로 설계',
-            description: '댐과 수로 시스템의 안정성과 효율성을 향상시킵니다.',
-            image: '@/assets/use-case-2.jpg'
-          },
-          {
-            title: '연안 구조물',
-            description: '파도와 조류에 대한 연안 구조물의 영향을 예측합니다.',
-            image: '@/assets/use-case-3.jpg'
-          }
-        ],
-        testimonials: [
-          {
-            name: '김현우',
-            company: '대한토목엔지니어링',
-            quote: 'Fluid Flow Analysis System은 우리 프로젝트의 정확도를 크게 향상시켰습니다. 직관적인 인터페이스와 정확한 분석 결과에 매우 만족합니다.',
-            avatar: '@/assets/avatar-1.jpg'
-          },
-          {
-            name: '이지원',
-            company: '한국수자원공사',
-            quote: '복잡한 수자원 프로젝트에서 이 시스템의 시뮬레이션 기능은 정말 놀랍습니다. 시간과 비용을 크게 절약할 수 있었습니다.',
-            avatar: '@/assets/avatar-2.jpg'
-          }
-        ]
+        features: FeatureModel.getFeatures(),
+        useCases: UseCaseModel.getUseCases(),
+        testimonials: TestimonialModel.getTestimonials()
       }
+    },
+    mounted() {
+      // Hero 섹션 애니메이션
+      this.$animate.fadeIn('.hero-content', {
+        delay: 0.2,
+        stagger: 0.2
+      });
+      
+      this.$animate.fadeIn('.hero-image', {
+        delay: 0.5,
+        x: 30
+      });
+      
+      // 스크롤 애니메이션
+      this.$animate.revealOnScroll('.features-grid .feature-card', {
+        stagger: 0.15
+      });
+      
+      this.$animate.revealOnScroll('.use-case-slide', {
+        stagger: 0.2,
+        scale: 0.95
+      });
+      
+      this.$animate.revealOnScroll('.testimonial-slider', {
+        delay: 0.2
+      });
     }
   }
   </script>
   
   <style scoped>
+  .home-content {
+    width: 100%;
+  }
+  
   .hero {
     position: relative;
     background: linear-gradient(135deg, #0288d1 0%, #01579b 100%);

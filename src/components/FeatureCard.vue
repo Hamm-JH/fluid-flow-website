@@ -1,7 +1,7 @@
 <template>
     <div class="feature-card">
       <div class="icon-container">
-        <i :class="'fas fa-' + icon"></i>
+        <font-awesome-icon :icon="icon" />
       </div>
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>

@@ -23,8 +23,10 @@
   
       <!-- 주요 기능 섹션 -->
       <section class="features">
-        <div class="container">
-          <h2>주요 기능</h2>
+        <div class="container section-container">
+          <div class="section-header">
+            <h2>주요 기능</h2>
+          </div>
           <div class="features-grid">
             <FeatureCard 
               v-for="feature in features" 
@@ -39,8 +41,10 @@
   
       <!-- 사용 사례 섹션 -->
       <section class="use-cases">
-        <div class="container">
-          <h2>적용 분야</h2>
+        <div class="container section-container">
+          <div class="section-header">
+            <h2>적용 분야</h2>
+          </div>
           <div class="use-cases-slider">
             <div v-for="(useCase, index) in useCases" :key="index" class="use-case-slide">
               <img :src="useCase.image" :alt="useCase.title" />
@@ -53,16 +57,20 @@
   
       <!-- 고객 후기 섹션 -->
       <section class="testimonials">
-        <div class="container">
-          <h2>고객 후기</h2>
+        <div class="container section-container">
+          <div class="section-header">
+            <h2>고객 후기</h2>
+          </div>
           <TestimonialSlider :testimonials="testimonials" />
         </div>
       </section>
   
       <!-- 문의 섹션 -->
       <section class="contact">
-        <div class="container">
-          <h2>지금 바로 시작하세요</h2>
+        <div class="container section-container">
+          <div class="section-header">
+            <h2>지금 바로 시작하세요</h2>
+          </div>
           <p>Fluid Flow Analysis System에 대해 더 알아보고 싶으신가요?</p>
           <router-link to="/contact" class="btn primary large">문의하기</router-link>
         </div>
@@ -149,6 +157,37 @@ export default {
   align-items: center;
 }
 
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.section-header:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #29b6f6, #0288d1);
+  border-radius: 3px;
+}
+
+.features .features-grid,
+.use-cases .use-cases-slider,
+.testimonials .testimonial-slider,
+.contact p {
+  margin-top: 2rem;
+}
+
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
@@ -230,8 +269,8 @@ section {
 
 h2 {
   font-size: 2.5rem;
-  margin-bottom: 3rem;
   color: #01579b;
+  margin: 0;
 }
 
 .features-grid {

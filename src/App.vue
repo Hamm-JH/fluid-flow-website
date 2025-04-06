@@ -14,7 +14,7 @@
             <li><router-link to="/case-studies" active-class="active">사례 연구</router-link></li>
             <li class="dropdown-container">
               <a href="#" class="dropdown-toggle" @click.prevent="toggleSupportMenu">지원 <font-awesome-icon :icon="isSupportMenuOpen ? 'chevron-up' : 'chevron-down'" /></a>
-              <ul class="dropdown-menu" :class="{ 'active': isSupportMenuOpen }">
+              <ul class="dropdown-menu" :class="{ 'active': isSupportMenuOpen }" @click.stop>
                 <li><router-link to="/faq" active-class="active">FAQ</router-link></li>
                 <li><router-link to="/contact" active-class="active">문의하기</router-link></li>
               </ul>
@@ -93,13 +93,30 @@ export default {
       isSupportMenuOpen: false
     }
   },
+  mounted() {
+    // 전역 클릭 이벤트 리스너 추가
+    document.addEventListener('click', this.handleClickOutside);
+  },
+  beforeUnmount() {
+    // 컴포넌트 제거 시 이벤트 리스너도 제거
+    document.removeEventListener('click', this.handleClickOutside);
+  },
   methods: {
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
       document.body.classList.toggle('no-scroll', this.isMenuOpen);
     },
-    toggleSupportMenu() {
+    toggleSupportMenu(event) {
+      // 이벤트 버블링 방지
+      event.stopPropagation();
       this.isSupportMenuOpen = !this.isSupportMenuOpen;
+    },
+    handleClickOutside(event) {
+      // 드롭다운 메뉴가 열려있을 때 메뉴 영역 외부를 클릭하면 메뉴 닫기
+      const dropdownContainer = document.querySelector('.dropdown-container');
+      if (this.isSupportMenuOpen && dropdownContainer && !dropdownContainer.contains(event.target)) {
+        this.isSupportMenuOpen = false;
+      }
     },
     openExternalLink(url) {
       // 외부 링크를 새 탭에서 열기

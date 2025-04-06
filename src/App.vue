@@ -6,17 +6,17 @@
           <img src="./assets/logo.svg" alt="Fluid Flow Logo" />
           <span>Fluid Flow</span>
         </div>
-        <nav class="nav" :class="{ active: isMenuOpen }">
+        <nav class="nav" :class="{ active: isMenuOpen }" @click.stop>
           <ul>
-            <li><router-link to="/" exact-active-class="active">홈</router-link></li>
-            <li><router-link to="/features" active-class="active">기능</router-link></li>
-            <li><router-link to="/pricing" active-class="active">가격</router-link></li>
-            <li><router-link to="/case-studies" active-class="active">사례 연구</router-link></li>
+            <li><router-link to="/" exact-active-class="active" @click="closeMenu">홈</router-link></li>
+            <li><router-link to="/features" active-class="active" @click="closeMenu">기능</router-link></li>
+            <li><router-link to="/pricing" active-class="active" @click="closeMenu">가격</router-link></li>
+            <li><router-link to="/case-studies" active-class="active" @click="closeMenu">사례 연구</router-link></li>
             <li class="dropdown-container">
               <a href="#" class="dropdown-toggle" @click.prevent="toggleSupportMenu">지원 <font-awesome-icon :icon="isSupportMenuOpen ? 'chevron-up' : 'chevron-down'" /></a>
               <ul class="dropdown-menu" :class="{ 'active': isSupportMenuOpen }" @click.stop>
-                <li><router-link to="/faq" active-class="active">FAQ</router-link></li>
-                <li><router-link to="/contact" active-class="active">문의하기</router-link></li>
+                <li><router-link to="/faq" active-class="active" @click="closeMenu">FAQ</router-link></li>
+                <li><router-link to="/contact" active-class="active" @click="closeMenu">문의하기</router-link></li>
               </ul>
             </li>
           </ul>
@@ -106,6 +106,12 @@ export default {
       this.isMenuOpen = !this.isMenuOpen;
       document.body.classList.toggle('no-scroll', this.isMenuOpen);
     },
+    closeMenu() {
+      if (this.isMenuOpen) {
+        this.isMenuOpen = false;
+        document.body.classList.remove('no-scroll');
+      }
+    },
     toggleSupportMenu(event) {
       // 이벤트 버블링 방지
       event.stopPropagation();
@@ -116,6 +122,13 @@ export default {
       const dropdownContainer = document.querySelector('.dropdown-container');
       if (this.isSupportMenuOpen && dropdownContainer && !dropdownContainer.contains(event.target)) {
         this.isSupportMenuOpen = false;
+      }
+      
+      // 모바일 메뉴가 열려있을 때 메뉴 영역 외부를 클릭하면 메뉴 닫기
+      const nav = document.querySelector('.nav');
+      const menuToggle = document.querySelector('.menu-toggle');
+      if (this.isMenuOpen && nav && !nav.contains(event.target) && !menuToggle.contains(event.target)) {
+        this.closeMenu();
       }
     },
     openExternalLink(url) {

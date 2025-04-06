@@ -100,6 +100,179 @@
       </div>
     </section>
 
+    <section class="features-comparison">
+      <div class="container">
+        <h2>기능 비교 체크리스트</h2>
+        <p class="section-intro">각 가격 정책에 포함된 기능을 비교해보세요</p>
+        
+        <div class="comparison-table-container">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th class="feature-name">기능</th>
+                <th>Starter</th>
+                <th>Professional</th>
+                <th>Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 시뮬레이션 기능 -->
+              <tr class="category-header">
+                <td colspan="4">시뮬레이션 기능</td>
+              </tr>
+              <tr>
+                <td class="feature-name">기본 유체 흐름 시뮬레이션</td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+              <tr>
+                <td class="feature-name">복잡한 지형 분석</td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+              <tr>
+                <td class="feature-name">다중 시나리오 비교</td>
+                <td>최대 3개</td>
+                <td>최대 10개</td>
+                <td>무제한</td>
+              </tr>
+              <tr>
+                <td class="feature-name">고급 난류 모델링</td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+              <tr>
+                <td class="feature-name">열역학 분석</td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+              <tr>
+                <td class="feature-name">침식 및 퇴적 시뮬레이션</td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+              <tr>
+                <td class="feature-name">오염물질 확산 분석</td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+
+              <!-- 보고서 및 데이터 분석 -->
+              <tr class="category-header">
+                <td colspan="4">보고서 및 데이터 분석</td>
+              </tr>
+              <tr>
+                <td class="feature-name">기본 보고서 템플릿</td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+              <tr>
+                <td class="feature-name">고급 데이터 시각화</td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+              <tr>
+                <td class="feature-name">맞춤형 보고서 생성</td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td>제한적</td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+              <tr>
+                <td class="feature-name">데이터 내보내기 형식</td>
+                <td>PDF, CSV</td>
+                <td>PDF, CSV, Excel</td>
+                <td>모든 형식</td>
+              </tr>
+              <tr>
+                <td class="feature-name">고해상도 렌더링</td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+
+              <!-- 협업 및 프로젝트 관리 -->
+              <tr class="category-header">
+                <td colspan="4">협업 및 프로젝트 관리</td>
+              </tr>
+              <tr>
+                <td class="feature-name">동시 접속 사용자</td>
+                <td>2명</td>
+                <td>10명</td>
+                <td>무제한</td>
+              </tr>
+              <tr>
+                <td class="feature-name">프로젝트 공유 및 협업</td>
+                <td>기본</td>
+                <td>고급</td>
+                <td>고급</td>
+              </tr>
+              <tr>
+                <td class="feature-name">버전 관리</td>
+                <td>최근 3개</td>
+                <td>최근 10개</td>
+                <td>무제한</td>
+              </tr>
+              <tr>
+                <td class="feature-name">프로젝트 저장 용량</td>
+                <td>10GB</td>
+                <td>50GB</td>
+                <td>무제한</td>
+              </tr>
+              <tr>
+                <td class="feature-name">사용자 권한 관리</td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+
+              <!-- 기술 지원 및 교육 -->
+              <tr class="category-header">
+                <td colspan="4">기술 지원 및 교육</td>
+              </tr>
+              <tr>
+                <td class="feature-name">기술 지원</td>
+                <td>이메일</td>
+                <td>이메일, 전화</td>
+                <td>24/7 전담 지원</td>
+              </tr>
+              <tr>
+                <td class="feature-name">응답 시간</td>
+                <td>48시간 이내</td>
+                <td>24시간 이내</td>
+                <td>4시간 이내</td>
+              </tr>
+              <tr>
+                <td class="feature-name">교육 세션</td>
+                <td>온라인 자료</td>
+                <td>웨비나 3회</td>
+                <td>맞춤형 교육</td>
+              </tr>
+              <tr>
+                <td class="feature-name">구현 컨설팅</td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td>8시간</td>
+                <td>무제한</td>
+              </tr>
+              <tr>
+                <td class="feature-name">맞춤형 개발 지원</td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="times" class="icon-times" /></td>
+                <td><font-awesome-icon icon="check" class="icon-check" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <section class="faq">
       <div class="container">
         <h2>자주 묻는 질문</h2>
@@ -427,6 +600,95 @@ export default {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* 기능 비교 테이블 스타일 */
+.features-comparison {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.features-comparison h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.comparison-table-container {
+  overflow-x: auto;
+  margin: 2rem 0;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.comparison-table th {
+  background-color: var(--primary-dark);
+  color: white;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.comparison-table th.feature-name {
+  text-align: left;
+}
+
+.comparison-table .feature-name {
+  text-align: left;
+  font-weight: 500;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+
+.comparison-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.comparison-table tbody tr:hover {
+  background-color: #f0f7ff;
+}
+
+.category-header {
+  background-color: #e1f5fe !important;
+}
+
+.category-header td {
+  text-align: left;
+  font-weight: 700;
+  color: var(--primary-dark);
+  padding: 0.8rem 1rem;
+}
+
+.icon-check {
+  color: #4CAF50;
+  font-size: 1.2rem;
+}
+
+.icon-times {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.2rem;
@@ -450,6 +712,27 @@ export default {
 
   .faq-grid {
     grid-template-columns: 1fr;
+  }
+  
+  /* 모바일 화면에서의 비교 테이블 스타일 */
+  .comparison-table-container {
+    margin: 1rem -1rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .comparison-table {
+    min-width: 768px;
+  }
+  
+  .comparison-table th, 
+  .comparison-table td {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .section-intro {
+    margin-bottom: 1.5rem;
   }
 }
 </style>

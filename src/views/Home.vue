@@ -297,20 +297,21 @@ h2 {
 
 .use-cases-slider {
   display: flex;
-  overflow-x: auto;
   gap: 2rem;
   padding: 1rem 0;
-  scroll-snap-type: x mandatory;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .use-case-slide {
   flex: 0 0 auto;
   width: 300px;
-  scroll-snap-align: start;
   background-color: #f5f5f5;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
 }
 
 .use-case-slide img {
@@ -359,6 +360,19 @@ h2 {
   
   .subtitle {
     font-size: 1.2rem;
+  }
+  
+  .use-case-slide {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  section {
+    padding: 3rem 0;
   }
 }
 

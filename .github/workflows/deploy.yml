@@ -1,0 +1,47 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main  # 또는 master 등 주 브랜치 이름
+  workflow_dispatch:  # 수동 트리거 허용
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js ⚙️
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies 📦
+        run: npm ci
+      
+      - name: Build 🔧
+        run: npm run build
+      
+      # Netlify 배포 옵션
+      - name: Deploy to Netlify 🚀
+        uses: nwtgck/actions-netlify@v2
+        with:
+          publish-dir: './dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+
+      # GitHub Pages 배포 옵션 (대체 또는 보조 옵션)
+      #- name: Deploy to GitHub Pages 🚀
+      #  uses: JamesIves/github-pages-deploy-action@v4
+      #  with:
+      #    folder: dist  # 배포할 빌드 폴더
+      #    branch: gh-pages  # 배포할 브랜치

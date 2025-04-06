@@ -14,7 +14,13 @@ import {
   faEnvelope,
   faMapMarkerAlt,
   faMapMarkedAlt,
-  faTimes
+  faTimes,
+  faDatabase,
+  faUsers,
+  faPuzzlePiece,
+  faFileAlt,
+  faCheck,
+  faCheckCircle
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faLinkedin,
@@ -42,6 +48,12 @@ library.add(
   faMapMarkerAlt,
   faMapMarkedAlt,
   faTimes,
+  faDatabase,
+  faUsers,
+  faPuzzlePiece,
+  faFileAlt,
+  faCheck,
+  faCheckCircle,
   // Brand 아이콘
   faLinkedin,
   faXTwitter,

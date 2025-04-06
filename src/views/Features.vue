@@ -26,7 +26,7 @@
               :class="{ active: selectedFeature === feature.id }"
             >
               <div class="feature-icon">
-                <i :class="'fas fa-' + feature.icon"></i>
+                <font-awesome-icon :icon="feature.icon" />
               </div>
               <h3>{{ feature.title }}</h3>
               <p>{{ feature.shortDescription }}</p>
@@ -44,7 +44,7 @@
               <p v-html="getSelectedFeature.description"></p>
               <ul class="feature-benefits">
                 <li v-for="(benefit, index) in getSelectedFeature.benefits" :key="index">
-                  <i class="fas fa-check-circle"></i>
+                  <font-awesome-icon icon="check-circle" />
                   <span>{{ benefit }}</span>
                 </li>
               </ul>
@@ -113,16 +113,16 @@
                 <tr v-for="(item, index) in comparisonItems" :key="index">
                   <td>{{ item.feature }}</td>
                   <td>
-                    <span class="check" v-if="item.fluidFlow"><i class="fas fa-check"></i></span>
-                    <span class="cross" v-else><i class="fas fa-times"></i></span>
+                    <span class="check" v-if="item.fluidFlow"><font-awesome-icon :icon="['fas', 'check']" /></span>
+                    <span class="cross" v-else><font-awesome-icon :icon="['fas', 'times']" /></span>
                   </td>
                   <td>
-                    <span class="check" v-if="item.competitorA"><i class="fas fa-check"></i></span>
-                    <span class="cross" v-else><i class="fas fa-times"></i></span>
+                    <span class="check" v-if="item.competitorA"><font-awesome-icon :icon="['fas', 'check']" /></span>
+                    <span class="cross" v-else><font-awesome-icon :icon="['fas', 'times']" /></span>
                   </td>
                   <td>
-                    <span class="check" v-if="item.competitorB"><i class="fas fa-check"></i></span>
-                    <span class="cross" v-else><i class="fas fa-times"></i></span>
+                    <span class="check" v-if="item.competitorB"><font-awesome-icon :icon="['fas', 'check']" /></span>
+                    <span class="cross" v-else><font-awesome-icon :icon="['fas', 'times']" /></span>
                   </td>
                 </tr>
               </tbody>
@@ -147,11 +147,11 @@
   
   <script>
   import featureSimulation from '../assets/feature-simulation.svg'
-  import featureUi from '../assets/feature-ui.svg'
-  import featureAnalysis from '../assets/feature-analysis.svg'
-  import featureCollaboration from '../assets/feature-collaboration.svg'
-  import featureModules from '../assets/feature-modules.svg'
-  import featureReports from '../assets/feature-reports.svg'
+import featureUi from '../assets/feature-ui.svg'
+import featureAnalysis from '../assets/feature-analysis.svg'
+import featureCollaboration from '../assets/feature-collaboration.svg'
+import featureModules from '../assets/feature-modules.svg'
+import featureReports from '../assets/feature-reports.svg'
   
   export default {
     name: 'FeaturesPage',
@@ -162,7 +162,7 @@
           {
             id: 1,
             title: '정밀한 유체 흐름 시뮬레이션',
-            icon: 'chart-line',
+            icon: ['fas', 'chart-line'],
             shortDescription: '고급 수치 모델을 활용한 정확한 유체 거동 예측',
             description: '첨단 수치 모델과 계산 알고리즘을 활용하여 실제와 거의 동일한 정확도로 유체 흐름을 시뮬레이션합니다. 복잡한 지형과 다양한 흐름 조건에서도 정확한 결과를 제공합니다.',
             benefits: [
@@ -176,7 +176,7 @@
           {
             id: 2,
             title: '직관적인 사용자 인터페이스',
-            icon: 'desktop',
+            icon: ['fas', 'desktop'],
             shortDescription: '복잡한 작업을 쉽게 수행할 수 있는 사용자 친화적 디자인',
             description: '엔지니어와 설계자를 위해 특별히 설계된 인터페이스는 복잡한 분석 작업을 단순화합니다. 직관적인 워크플로우와 명확한 시각적 피드백으로 학습 곡선을 최소화합니다.',
             benefits: [
@@ -190,7 +190,7 @@
           {
             id: 3,
             title: '고급 데이터 분석',
-            icon: 'database',
+            icon: ['fas', 'database'],
             shortDescription: '시뮬레이션 결과에 대한 포괄적인 분석 도구',
             description: '내장된 고급 분석 도구로 시뮬레이션 결과를 심층적으로 분석할 수 있습니다. 다양한 시각화 옵션과 통계 도구를 통해 데이터에서 의미 있는 통찰력을 얻을 수 있습니다.',
             benefits: [
@@ -204,7 +204,7 @@
           {
             id: 4,
             title: '협업 및 공유 기능',
-            icon: 'users',
+            icon: ['fas', 'users'],
             shortDescription: '팀 작업을 위한 효율적인 협업 도구',
             description: '분산된 팀 간의 원활한 협업을 지원합니다. 실시간 변경 추적, 주석 및 의견 공유, 버전 관리 등 다양한 협업 기능을 제공합니다.',
             benefits: [
@@ -218,7 +218,7 @@
           {
             id: 5,
             title: '확장 가능한 모듈 시스템',
-            icon: 'puzzle-piece',
+            icon: ['fas', 'puzzle-piece'],
             shortDescription: '필요에 따라 확장 가능한 유연한 시스템 구조',
             description: '모듈식 아키텍처를 통해 필요에 따라 시스템을 확장할 수 있습니다. 특수 분석 모듈, 산업별 특화 도구, 커스텀 워크플로우 등을 추가할 수 있습니다.',
             benefits: [
@@ -232,7 +232,7 @@
           {
             id: 6,
             title: '종합적인 보고서 생성',
-            icon: 'file-alt',
+            icon: ['fas', 'file-alt'],
             shortDescription: '전문적인 보고서를 쉽게 작성하고 공유',
             description: '시뮬레이션 결과를 바탕으로 포괄적이고 전문적인 보고서를 자동으로 생성합니다. 다양한 템플릿과 사용자 정의 옵션으로 요구에 맞는 보고서를 작성할 수 있습니다.',
             benefits: [
@@ -404,6 +404,11 @@
     margin-bottom: 1.5rem;
     color: white;
     font-size: 1.5rem;
+  }
+  
+  .feature-icon svg {
+    width: 24px;
+    height: 24px;
   }
   
   .feature-item h3 {

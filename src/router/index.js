@@ -6,6 +6,7 @@ import Features from '@/views/Features.vue'
 import CaseStudies from '@/views/CaseStudies.vue'
 import Contact from '@/views/Contact.vue'
 import FAQ from '@/views/FAQ.vue'
+import Pricing from '@/views/Pricing.vue'
 
 // 라우트 설정
 const routes = [
@@ -31,6 +32,14 @@ const routes = [
     component: Features,
     meta: {
       title: '기능 - Fluid Flow Analysis System'
+    }
+  },
+  {
+    path: '/pricing',
+    name: 'Pricing',
+    component: Pricing,
+    meta: {
+      title: '가격 - Fluid Flow Analysis System'
     }
   },
   {

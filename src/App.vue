@@ -10,6 +10,7 @@
           <ul>
             <li><router-link to="/" exact-active-class="active">홈</router-link></li>
             <li><router-link to="/features" active-class="active">기능</router-link></li>
+            <li><router-link to="/pricing" active-class="active">가격</router-link></li>
             <li><router-link to="/case-studies" active-class="active">사례 연구</router-link></li>
             <li class="dropdown-container">
               <a href="#" class="dropdown-toggle" @click.prevent="toggleSupportMenu">지원 <font-awesome-icon :icon="isSupportMenuOpen ? 'chevron-up' : 'chevron-down'" /></a>
@@ -44,8 +45,8 @@
               <h4>제품</h4>
               <ul>
                 <li><router-link to="/features">기능</router-link></li>
+                <li><router-link to="/pricing">가격</router-link></li>
                 <li><a href="#" @click.prevent="scrollToSystemRequirements">시스템 요구 사항</a></li>
-                <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">가격 <font-awesome-icon icon="external-link-alt" /></a></li>
                 <li><a href="#" @click.prevent="openExternalLink('/')" class="external-link">다운로드 <font-awesome-icon icon="external-link-alt" /></a></li>
               </ul>
             </div>

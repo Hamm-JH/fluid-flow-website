@@ -2,10 +2,10 @@
   <div class="app">
     <header class="header">
       <div class="container">
-        <div class="logo">
+        <router-link to="/" class="logo" @click="closeMenu">
           <img src="./assets/logo.svg" alt="Fluid Flow Logo" />
           <span>Fluid Flow</span>
-        </div>
+        </router-link>
         <nav class="nav" :class="{ active: isMenuOpen }" @click.stop>
           <ul>
             <li><router-link to="/" exact-active-class="active" @click="closeMenu">홈</router-link></li>
@@ -36,10 +36,10 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div class="footer-logo">
+          <router-link to="/" class="footer-logo">
             <img src="./assets/logo-white.svg" alt="Fluid Flow Logo" />
             <span>Fluid Flow</span>
-          </div>
+          </router-link>
           <div class="footer-links">
             <div class="link-group">
               <h4>제품</h4>
@@ -203,6 +203,8 @@ body.no-scroll {
 .logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .logo img {
@@ -342,6 +344,8 @@ body.no-scroll {
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .footer-logo img {

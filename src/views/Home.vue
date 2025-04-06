@@ -117,8 +117,21 @@ export default {
     
     // 스크롤 애니메이션
     this.$animate.revealOnScroll('.features-grid .feature-card', {
-      stagger: 0.15
+      stagger: 0.15,
+      onComplete: function() {
+        // 애니메이션 완료 후 모든 카드의 transform 초기화
+        gsap.set(this.targets(), { clearProps: 'transform,y' });
+      }
     });
+    
+    // 애니메이션 완료 후 추가 처리를 위한 타이머 설정
+    setTimeout(() => {
+      // 모든 feature card의 transform을 초기화
+      const featureCards = document.querySelectorAll('.feature-card');
+      featureCards.forEach(card => {
+        card.style.transform = 'translateY(0)';
+      });
+    }, 1500); // 애니메이션이 모두 완료되기를 기다리는 적절한 시간
     
     this.$animate.revealOnScroll('.use-case-slide', {
       stagger: 0.2,
@@ -328,6 +341,7 @@ h2 {
 
 .feature-card-item {
   margin-bottom: 1rem;
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {

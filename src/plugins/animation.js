@@ -52,6 +52,10 @@ export default {
             trigger: selector,
             start: 'top 80%',
             toggleActions: 'play none none none'
+          },
+          onComplete: function() {
+            // 애니메이션 완료 후 transform 초기화
+            gsap.set(this.targets(), { clearProps: 'transform,y' });
           }
         };
         

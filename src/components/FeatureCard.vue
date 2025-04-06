@@ -41,6 +41,7 @@
     text-align: center;
     justify-content: flex-start;
     height: 350px;
+    transform: translateY(0);
   }
   
   .feature-card:hover {
